@@ -49,5 +49,6 @@ axios.post(endpoint, body, {
       return;
     }
     console.log('wrote res in captured.json');
+    // console.log(res.data);
   });
 });
