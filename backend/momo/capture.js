@@ -1,4 +1,4 @@
-const axios = require('axios/index');
+const axios = require('axios');
 const fs = require('fs');
 const uuidv1 = require('uuid/v1');
 const {getSignature, endpoint, partnerCode, accessKey, amount, orderInfo, returnUrl, notifyUrl} = require('./constants');
