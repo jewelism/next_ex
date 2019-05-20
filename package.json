@@ -6,12 +6,13 @@
     "dev": "next build && node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "nstart": "next build && next start"
+    "n": "next build && next start"
   },
   "author": "boseok",
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.4",
+    "helmet": "^3.18.0",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.1.0",
     "react": "^16.8.6",
