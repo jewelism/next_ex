@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "next build && node server.js",
-    "build": "next build",
-    "start": "NODE_ENV=production node server.js",
-    "n": "next build && next start"
+    "dev": "next build && NODE_ENV=dev sudo node server.js",
+    "build": "sudo next build",
+    "start": "NODE_ENV=production sudo node server.js",
+    "n": "npm run build && sudo npm start",
+    "m": "npm run build && sudo next start"
   },
   "author": "boseok",
   "dependencies": {
@@ -17,6 +18,7 @@
     "next": "^8.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-facebook-login": "^4.1.1",
     "styled-jsx": "latest",
     "uuid": "^3.3.2"
   }

@@ -5,7 +5,10 @@ const Index = () => (
     <Link href="/about">
       <a>About Page</a>
     </Link>
-    <p>Hello Next.js</p>
+    <Link href="/login">
+      <a>Login Page</a>
+    </Link>
+    <p>vn shop</p>
   </div>
 );
 
