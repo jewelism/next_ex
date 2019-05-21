@@ -8,12 +8,13 @@ function Login() {
     setFBRes(res);
     console.log(res);
   };
-  const getProfileImage = fbRes => fbRes.picture.data && fbRes.picture.data.url;
-
+  const getProfileImage = fbRes => fbRes.picture && fbRes.picture.data && fbRes.picture.data.url;
+  const onClickLogout = () => window.FB && window.FB.logout(res => console.log(res));
   return (
     <div>
       <h1>Login Page</h1>
       <FBLogin responseFacebook={responseFacebook}/>
+      <div onClick={onClickLogout}>Logout</div>
       <div>이름 : {FBRes.name}</div>
       <div>이메일 : {FBRes.email}</div>
       <img src={getProfileImage(FBRes)}/>
