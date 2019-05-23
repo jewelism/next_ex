@@ -1,10 +1,20 @@
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import MainMenu from "../components/MainMenu";
+import Carousel from '../components/Carousel';
 
 const Index = ({auth}) => {
   return (
     <div>
       <h1>vn shop</h1>
       <MainMenu auth={auth}/>
+      <hr/>
+      {auth &&
+      <>
+        <div>{JSON.parse(auth).expiresIn}</div>
+        <div>{auth}</div>
+      </>
+      }
+      <Carousel width="700px"/>
     </div>
   );
 };

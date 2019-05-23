@@ -1,24 +1,29 @@
+import {useState} from 'react';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import {saveAuthData} from "../../utils/auth";
 
 const FBLogin = props => {
-  const responseFacebook = response => {
-    try {
-      saveAuthData(response);
-      location.href = '/';
-    } catch (e) {
-
-    } finally {
-      props.res && props.res(response);
+  const [loading, setLoading] = useState(false);
+  const onClickLogin = (e, propsOnClick) => {
+    if(!loading){
+      setLoading(true);
+      propsOnClick(e);
     }
+  };
+
+  const responseFacebook = response => {
+    saveAuthData(response);
+    setLoading(false);
+    location.href = '/';
   };
 
   return <FacebookLogin
     appId="432178150913990"
     fields="name,email,picture,birthday"
+    language="ko-KR"
     callback={responseFacebook}
     render={renderProps => (
-      <div onClick={renderProps.onClick}>FB Login</div>
+      <div onClick={e => onClickLogin(e, renderProps.onClick)}>FB Login</div>
     )}/>
 };
 

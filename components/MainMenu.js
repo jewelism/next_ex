@@ -9,22 +9,20 @@ const MainMenu = ({auth}) => (
         <a>About Page</a>
       </Link>
     </li>
+    <li>
+      <Link href="/payment">
+        <a>Payment Page</a>
+      </Link>
+    </li>
     {auth ?
       <li onClick={logout}><a>Logout</a></li>
       :
       <li>
         <FBLogin/>
-        {/*<Link href="/login">*/}
-        {/*  <a>Login Page</a>*/}
-        {/*</Link>*/}
       </li>
     }
-    <li>
-      {auth}
-    </li>
   </ul>
 );
-
 
 
 export default MainMenu;
