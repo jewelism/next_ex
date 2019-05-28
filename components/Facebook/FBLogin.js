@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
-import {saveAuthData} from "../../utils/auth";
+import {saveAuthData} from '../../utils/auth';
 
 const FBLogin = props => {
   const [loading, setLoading] = useState(false);

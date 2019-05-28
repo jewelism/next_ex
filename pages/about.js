@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch';
-import EditableList from "../components/EditableList";
+import EditableList from '../components/EditableList';
 import {useState} from 'react';
 
 function About({show}) {

@@ -1,6 +1,6 @@
 import 'normalize.css';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import MainMenu from "../components/MainMenu";
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import MainMenu from '../components/MainMenu';
 import Carousel from '../components/Carousel';
 import '../styles/index.scss';
 

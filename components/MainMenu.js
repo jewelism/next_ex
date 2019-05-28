@@ -1,6 +1,6 @@
-import Link from "next/link";
-import {logout} from "../utils/auth";
-import FBLogin from "./Facebook/FBLogin";
+import Link from 'next/link';
+import {logout} from '../utils/auth';
+import FBLogin from './Facebook/FBLogin';
 
 const MainMenu = ({auth}) => (
   <ul>
