@@ -1,20 +1,23 @@
+import 'normalize.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import MainMenu from "../components/MainMenu";
 import Carousel from '../components/Carousel';
+import '../styles/index.scss';
 
 const Index = ({auth}) => {
   return (
     <div>
       <h1>vn shop</h1>
+      <div className="font-test">font-test</div>
       <MainMenu auth={auth}/>
       <hr/>
       {auth &&
       <>
         <div>{JSON.parse(auth).expiresIn}</div>
-        <div>{auth}</div>
+        <div style={{display: 'flex', flexWrap: 'wrap'}}>{auth}</div>
       </>
       }
-      <Carousel width="700px"/>
+      <Carousel list={['/static/img/img1.jpeg','/static/img/img2.jpeg','/static/img/img3.jpeg']}/>
     </div>
   );
 };

@@ -19,6 +19,7 @@ const FBLogin = props => {
 
   return <FacebookLogin
     appId="432178150913990"
+    scope="public_profile,user_friends"
     fields="name,email,picture,birthday"
     language="ko-KR"
     callback={responseFacebook}
