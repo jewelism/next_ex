@@ -1,11 +1,17 @@
-
 .feed-container-m {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15pt;
-  margin-bottom: 30pt;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 }
 
-.feed-header{
+.feed-list-container-m {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15pt;
+}
+
+.feed-header {
   font-size: 30px;
 }

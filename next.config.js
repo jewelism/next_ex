@@ -6,8 +6,7 @@ module.exports = withOffline(withCSS(withSass({
   crossOrigin: 'anonymous',
   exportPathMap() {
     return {
-      '/index': {page: '/index'},
-      '/about': {page: '/about'}
+      '/': {page: '/feed'},
     }
   },
 })));

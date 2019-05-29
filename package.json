@@ -1,12 +1,12 @@
 {
   "name": "next_web",
   "version": "1.0.0",
-  "description": "",
+  "description": "jwy app",
   "scripts": {
     "dev": "npm run build && NODE_ENV=dev npm start",
     "pro": "npm run build && NODE_ENV=production npm start",
     "build": "next build",
-    "export": "next export",
+    "export": "npm run build && next export",
     "start": "node server.js",
     "n": "npm run build && next start"
   },
