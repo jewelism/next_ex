@@ -14,6 +14,11 @@ const MainMenu = ({auth}) => (
         <a>Payment Page</a>
       </Link>
     </li>
+    <li>
+      <Link href="/feed">
+        <a>Feed Page</a>
+      </Link>
+    </li>
     {auth ?
       <li onClick={logout}><a>Logout</a></li>
       :

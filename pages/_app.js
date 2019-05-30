@@ -17,6 +17,7 @@ class NextApp extends App {
 
     return (
       <Container>
+        <title>Next</title>
         <Component {...pageProps} />
       </Container>
     )
