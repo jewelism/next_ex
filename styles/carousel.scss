@@ -1,0 +1,10 @@
+@import 'color.scss';
+
+.alice-carousel__dots-item {
+  background-color: $inactive-color;
+}
+
+.alice-carousel__dots-item:hover, .alice-carousel__dots-item.__active {
+  background-color: $sig-color !important;
+}
+

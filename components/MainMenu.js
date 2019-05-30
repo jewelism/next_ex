@@ -19,6 +19,11 @@ const MainMenu = ({auth}) => (
         <a>Feed Page</a>
       </Link>
     </li>
+    <li>
+      <Link href="/product">
+        <a>Product Page</a>
+      </Link>
+    </li>
     {auth ?
       <li onClick={logout}><a>Logout</a></li>
       :

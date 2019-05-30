@@ -6,7 +6,7 @@ module.exports = withOffline(withCSS(withSass({
   crossOrigin: 'anonymous',
   exportPathMap() {
     const path = {};
-    ['/feed'].forEach(page => {
+    ['/feed', '/product'].forEach(page => {
       path[page] = {page};
     });
     return {

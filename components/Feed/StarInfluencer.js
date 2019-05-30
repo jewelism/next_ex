@@ -6,6 +6,7 @@ import Like from '../Like/Like';
 function StarInfluencer({list = []}) {
   const handleOnDragStart = e => e.preventDefault();
   const stagePadding = 20;
+  const photoSize = '7rem';
   return (
     <>
       <FeedHeader text="Star Influencer"/>
@@ -33,7 +34,7 @@ function StarInfluencer({list = []}) {
               borderRadius: '4px'
             }}
           >
-            <div style={{width: '7rem', height: '7rem'}}>
+            <div style={{width: photoSize, height: photoSize}}>
               <img src="/static/img/img1.jpeg"
                    style={{
                      width: '100%',
