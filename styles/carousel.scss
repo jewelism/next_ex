@@ -8,3 +8,34 @@
   background-color: $sig-color !important;
 }
 
+.carousel-wrap-common {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item-wrap {
+  height: 200px;
+  padding: 0 10px;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.carousel-circle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.img-carousel-img {
+  width: 100%;
+  object-fit: contain;
+}
+
