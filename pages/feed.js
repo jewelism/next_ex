@@ -1,16 +1,47 @@
+import {useState, useEffect} from 'react';
+import fetch from 'isomorphic-unfetch';
+
 import '../styles/feed.scss';
 import FeedSection from '../components/Feed/FeedSection';
 
 import StarInfluencer from '../components/Feed/StarInfluencer';
 
-const Feed = () => {
 
+const Feed = () => {
+  const [nextPage, setNextPage] = useState(1);
+  const [productList, setProductList] = useState([]);
+  const addProductList = list => {
+    setNextPage(nextPage + 1);
+    setProductList([...productList, ...list]);
+  };
+
+  const fetchProductListByPage = pageNum => fetch('https://inseongj1.moqa.co.kr/' + pageNum)
+    .then(res => res.json())
+    .then(d => {
+      const list = d.map(i => ({
+        id: `key${i}i`,
+        unit: '¢',
+        price: i * 11,
+        text: 'a' + i,
+        liked: i % 2,
+        likeCount: i * 111
+      }));
+      addProductList(list);
+    });
+
+  const onClickSeeMore = () => fetchProductListByPage(nextPage);
+
+
+  useEffect(() => {
+    fetchProductListByPage(1);
+  }, []);
+
+  console.log('render');
   return (
     <div className="feed-container-m">
       <div>News Feed</div>
       <FeedSection
-        filter={() => alert('filter required!')}
-        headText="All Product~!"
+        headText="Best Product"
         list={[
           {id: 1, unit: '¢', price: 11, text: 'asdfasdf111', liked: true, likeCount: 123},
           {id: 2, unit: '¢', price: 22, text: '2222asdfasd', likeCount: 1},
@@ -23,15 +54,20 @@ const Feed = () => {
         {id: 3, name: 'boseok33', followed: true, followCount: 333},
       ]}/>
       <FeedSection
-        headText="Best Product"
-        list={[
-          {id: 1, unit: '¥', price: 1111, text: 'boseok1', liked: true, likeCount: 999},
-          {id: 2, unit: '¥', price: 2222, text: 'boseok2', likeCount: 888},
-          {id: 3, unit: '¥', price: 3333, text: 'boseok3', likeCount: 777},
-          {id: 4, unit: '¥', price: 4444, text: 'boseok4', likeCount: 666},
-        ]}/>
+        filter={() => alert('filter required!')}
+        headText="All Product"
+        list={productList}/>
+      <button onClick={onClickSeeMore}>See More +</button>
     </div>
   );
 };
+
+// Feed.getInitialProps = function (ctx) {
+//   return new Promise(resolve => {
+//     fetch('https://inseongj1.moqa.co.kr/')
+//       .then(res => res.json())
+//       .then(data => resolve({data}));
+//   });
+// };
 
 export default Feed;

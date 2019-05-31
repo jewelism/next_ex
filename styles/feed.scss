@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  //width: 100%;
 }
 
 .feed-list-container-m {
@@ -9,8 +10,9 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 15pt;
-  width: 100%;
+  grid-gap: 17px;
+  //width: 100%;
+  padding: 0 25px;
 }
 
 .feed-header {

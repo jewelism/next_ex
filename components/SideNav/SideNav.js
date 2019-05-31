@@ -3,8 +3,8 @@ import Scrollspy from 'react-scrollspy';
 
 function SideNavItem({text, hash, active}) {
   return (
-    <div>
-      <a href={'#' + hash}>{active && '선택된거!@'} {text}</a>
+    <div style={{backgroundColor: active ? 'red' : 'transparent'}}>
+      <a href={'#' + hash}>{text}</a>
     </div>
   );
 }
