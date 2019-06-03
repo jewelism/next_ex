@@ -12,6 +12,8 @@ const Payment = () => {
         <title>Payment</title>
       </Head>
       <h1>Payment</h1>
+      <div>MOMO Pay</div>
+      <div>무통장입금</div>
       <div onClick={onClick}>click</div>
       {loaded && <div>ok!</div>}
     </div>

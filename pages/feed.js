@@ -1,10 +1,10 @@
 import {useState, useEffect} from 'react';
-import fetch from 'isomorphic-unfetch';
-
 import '../styles/feed.scss';
 import FeedSection from '../components/Feed/FeedSection';
 
 import StarInfluencer from '../components/Feed/StarInfluencer';
+import {findFeedList} from '../api';
+import CategoryMenu from '../components/CategoryMenu';
 
 
 const Feed = () => {
@@ -15,8 +15,7 @@ const Feed = () => {
     setProductList([...productList, ...list]);
   };
 
-  const fetchProductListByPage = pageNum => fetch('https://inseongj1.moqa.co.kr/' + pageNum)
-    .then(res => res.json())
+  const fetchProductListByPage = pageNum => findFeedList(pageNum)
     .then(d => {
       const list = d.map(i => ({
         id: `key${i}i`,
@@ -36,37 +35,44 @@ const Feed = () => {
     fetchProductListByPage(1);
   }, []);
 
-  console.log('render');
+  console.log('render', nextPage, productList);
   return (
-    <div className="feed-container-m">
-      <div>News Feed</div>
-      <FeedSection
-        headText="Best Product"
-        list={[
-          {id: 1, unit: '¢', price: 11, text: 'asdfasdf111', liked: true, likeCount: 123},
-          {id: 2, unit: '¢', price: 22, text: '2222asdfasd', likeCount: 1},
-          {id: 3, unit: '¢', price: 33, text: 'sdf3333', likeCount: 0},
-          {id: 4, unit: '¢', price: 44, text: 'dfsdf44444', likeCount: 0},
+    <>
+      <CategoryMenu/>
+      <div className="feed-container-m">
+
+        <div>News Feed</div>
+        <FeedSection
+          headText="Best Product"
+          list={[
+            {id: 1, unit: '¢', price: 11, text: 'asdfasdf111', liked: true, likeCount: 123},
+            {id: 2, unit: '¢', price: 22, text: '2222asdfasd', likeCount: 1},
+            {id: 3, unit: '¢', price: 33, text: 'sdf3333', likeCount: 0},
+            {id: 4, unit: '¢', price: 44, text: 'dfsdf44444', likeCount: 0},
+          ]}/>
+        <StarInfluencer list={[
+          {id: 1, name: 'boseok11', followed: true, followCount: 111},
+          {id: 2, name: 'boseok22', followed: true, followCount: 222},
+          {id: 3, name: 'boseok33', followed: true, followCount: 333},
         ]}/>
-      <StarInfluencer list={[
-        {id: 1, name: 'boseok11', followed: true, followCount: 111},
-        {id: 2, name: 'boseok22', followed: true, followCount: 222},
-        {id: 3, name: 'boseok33', followed: true, followCount: 333},
-      ]}/>
-      <FeedSection
-        filter={() => alert('filter required!')}
-        headText="All Product"
-        list={productList}/>
-      <button onClick={onClickSeeMore}>See More +</button>
-    </div>
+        <FeedSection
+          filter={() => alert('filter required!')}
+          headText="All Product"
+          list={productList}/>
+        <button onClick={onClickSeeMore}>See More +</button>
+      </div>
+    </>
   );
 };
 
 // Feed.getInitialProps = function (ctx) {
 //   return new Promise(resolve => {
-//     fetch('https://inseongj1.moqa.co.kr/')
+//     fetch('https://inseongj1.moqa.co.kr/1')
 //       .then(res => res.json())
-//       .then(data => resolve({data}));
+//       .then(data => resolve({data}))
+//       .catch(err=> {
+//         console.error(err)
+//       });
 //   });
 // };
 

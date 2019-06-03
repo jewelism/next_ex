@@ -1,3 +1,5 @@
+@import 'color.scss';
+
 .feed-container-m {
   display: flex;
   flex-flow: column wrap;
@@ -17,4 +19,20 @@
 
 .feed-header {
   font-size: 30px;
+}
+
+
+.menu-item {
+  padding: 0 40px;
+  margin: 5px 10px;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+}
+
+.menu-item-wrapper:focus {
+  outline: none;
+}
+.menu-item-wrapper.active {
+  border-bottom: 1px solid $sig-color;
 }
