@@ -2,10 +2,10 @@ const express = require('express');
 const helmet = require('helmet');
 const next = require('next');
 const https = require('https');
+const {join} = require('path');
 const {parse} = require('url');
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
-
 
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -25,7 +25,14 @@ app
       server.use(helmet());
       server.use(cookieParser());
       server.get('*', (req, res) => {
-        return handle(req, res);
+        const parsedUrl = parse(req.url, true);
+        const {pathname} = parsedUrl;
+        if (pathname === '/service-worker.js') {
+          const filePath = join(__dirname, '.next', pathname);
+          app.serveStatic(req, res, filePath);
+        } else {
+          handle(req, res, parsedUrl);
+        }
       });
       https.createServer(httpsOptions, server).listen(8080);
     } else {

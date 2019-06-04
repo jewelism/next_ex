@@ -26,5 +26,6 @@ module.exports = withOffline(withCSS(withSass({
       }
     });
     return config;
-  }
+  },
+  // workboxOpts: {},
 })));
