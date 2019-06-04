@@ -17,31 +17,31 @@ const httpsOptions = {
   cert: fs.readFileSync('./dev/cert.pem')
 };
 
+function createServer() {
+  const server = express();
+  server.use(helmet());
+  server.use(cookieParser());
+  server.get('*', (req, res) => {
+    const parsedUrl = parse(req.url, true);
+    const {pathname} = parsedUrl;
+    if (pathname === '/service-worker.js') {
+      const filePath = join(__dirname, '.next', pathname);
+      app.serveStatic(req, res, filePath);
+    } else {
+      handle(req, res, parsedUrl);
+    }
+  });
+  return server;
+}
+
 app
   .prepare()
   .then(() => {
     if (dev) {
-      const server = express();
-      server.use(helmet());
-      server.use(cookieParser());
-      server.get('*', (req, res) => {
-        const parsedUrl = parse(req.url, true);
-        const {pathname} = parsedUrl;
-        if (pathname === '/service-worker.js') {
-          const filePath = join(__dirname, '.next', pathname);
-          app.serveStatic(req, res, filePath);
-        } else {
-          handle(req, res, parsedUrl);
-        }
-      });
+      const server = createServer();
       https.createServer(httpsOptions, server).listen(8080);
     } else {
-      const server = express();
-      server.use(helmet());
-      server.use(cookieParser());
-      server.get('*', (req, res) => {
-        return handle(req, res);
-      });
+      const server = createServer();
       server.listen(3001, err => {
         if (err) throw err;
         console.log('> Ready on http://localhost:3001');

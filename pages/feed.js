@@ -35,12 +35,10 @@ const Feed = () => {
     fetchProductListByPage(1);
   }, []);
 
-  console.log('render', nextPage, productList);
   return (
     <>
       <CategoryMenu/>
       <div className="feed-container-m">
-
         <div>News Feed</div>
         <FeedSection
           headText="Best Product"
