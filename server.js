@@ -21,10 +21,10 @@ function createServer() {
   const server = express();
   server.use(helmet());
   server.use(cookieParser());
-  // server.get('/product/:id', (req, res) => {
-  //   const {id} = req.params;
-  //   return app.render(req, res, '/product', {id});
-  // });
+  server.get('/product/:id', (req, res) => {
+    const {id} = req.params;
+    return app.render(req, res, '/product', {id});
+  });
 
   server.get('*', (req, res) => {
     const parsedUrl = parse(req.url, true);
@@ -42,11 +42,10 @@ function createServer() {
 app
   .prepare()
   .then(() => {
+    const server = createServer();
     if (dev) {
-      const server = createServer();
       https.createServer(httpsOptions, server).listen(8080);
     } else {
-      const server = createServer();
       server.listen(3001, err => {
         if (err) throw err;
         console.log('> Ready on http://localhost:3001');
