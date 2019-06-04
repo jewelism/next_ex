@@ -3,6 +3,7 @@ import flush from 'styled-jsx/server';
 
 export default class MyDocument extends Document {
   static getInitialProps({renderPage}) {
+    console.log(renderPage);
     const {html, head} = renderPage();
     const styles = flush();
 

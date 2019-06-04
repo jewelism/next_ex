@@ -34,5 +34,6 @@
   outline: none;
 }
 .menu-item-wrapper.active {
+  color: $sig-color;
   border-bottom: 1px solid $sig-color;
 }

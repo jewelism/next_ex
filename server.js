@@ -21,6 +21,11 @@ function createServer() {
   const server = express();
   server.use(helmet());
   server.use(cookieParser());
+  // server.get('/product/:id', (req, res) => {
+  //   const {id} = req.params;
+  //   return app.render(req, res, '/product', {id});
+  // });
+
   server.get('*', (req, res) => {
     const parsedUrl = parse(req.url, true);
     const {pathname} = parsedUrl;

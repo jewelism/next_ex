@@ -4,7 +4,7 @@ import FeedSection from '../components/Feed/FeedSection';
 
 import StarInfluencer from '../components/Feed/StarInfluencer';
 import {findFeedList} from '../api';
-import CategoryMenu from '../components/CategoryMenu';
+import WithCategory from '../layouts/WithCategory';
 
 
 const Feed = () => {
@@ -32,12 +32,12 @@ const Feed = () => {
 
 
   useEffect(() => {
+    console.log(history);
     fetchProductListByPage(1);
   }, []);
 
   return (
-    <>
-      <CategoryMenu/>
+    <WithCategory>
       <div className="feed-container-m">
         <div>News Feed</div>
         <FeedSection
@@ -59,7 +59,7 @@ const Feed = () => {
           list={productList}/>
         <button onClick={onClickSeeMore}>See More +</button>
       </div>
-    </>
+    </WithCategory>
   );
 };
 
