@@ -1,12 +1,14 @@
 import CategoryMenu from '../components/CategoryMenu';
 import TopNav from '../components/TopNav';
 
-const WithCategory = ({children}) => {
+const WithCategory = ({children, nav}) => {
   return (
     <>
-      <TopNav/>
-      <CategoryMenu/>
-      {children}
+      {nav}
+      <div className="for-overlay">
+        <CategoryMenu/>
+        {children}
+      </div>
     </>
   );
 };

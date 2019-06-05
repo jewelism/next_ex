@@ -1,11 +1,13 @@
 import {useState, useEffect} from 'react';
 import '../styles/feed.scss';
-import FeedSection from '../components/Feed/FeedSection';
 
-import StarInfluencer from '../components/Feed/StarInfluencer';
-import {findFeedList} from '../api';
 import WithCategory from '../layouts/WithCategory';
+import FeedSection from '../components/Feed/FeedSection';
+import StarInfluencer from '../components/Feed/StarInfluencer';
+import HamburgMenu from '../components/HamburgMenu';
 
+import {findFeedList} from '../api';
+import TopNav from '../components/TopNav';
 
 const Feed = () => {
   const [nextPage, setNextPage] = useState(1);
@@ -32,13 +34,12 @@ const Feed = () => {
 
 
   useEffect(() => {
-    console.log(history);
     fetchProductListByPage(1);
   }, []);
 
   return (
-    <WithCategory>
-      <div className="feed-container-m">
+    <WithCategory nav={<TopNav left={<HamburgMenu/>}/>}>
+      <div className="feed-container-m for-overlay">
         <div>News Feed</div>
         <FeedSection
           headText="Best Product"
