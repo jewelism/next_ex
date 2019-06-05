@@ -21,9 +21,16 @@ function createServer() {
   const server = express();
   server.use(helmet());
   server.use(cookieParser());
-  server.get('/product/:id', (req, res) => {
-    const {id} = req.params;
-    return app.render(req, res, '/product', {id});
+
+  server.get('/influencer/:iid', (req, res) => {
+    const {iid} = req.params;
+    return app.render(req, res, '/influencer', {iid});
+  });
+
+  server.get('/product/:pid', (req, res) => {
+    const {pid} = req.params;
+    const {iid} = req.query;
+    return app.render(req, res, '/product', {pid, iid});
   });
 
   server.get('*', (req, res) => {

@@ -1,11 +1,11 @@
 import '../styles/index.scss';
 
-const TopNav = () => {
+const TopNav = ({left, center, right}) => {
   return(
     <div className="top-nav-container">
-      <div>Ham</div>
+      {left || <div>H</div>}
       <div>S</div>
-      <div>Search</div>
+      {right || <div>Search</div>}
     </div>
   );
 };

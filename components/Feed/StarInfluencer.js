@@ -1,6 +1,6 @@
 import FeedHeader from './FeedHeader';
 import Carousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
+import '../../styles/carousel.scss';
 import Like from '../Like/Like';
 
 function StarInfluencer({list = []}) {

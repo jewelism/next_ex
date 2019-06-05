@@ -1,5 +1,4 @@
 import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
 import '../styles/carousel.scss';
 
 function ImgCarousel({list = [], carouselProps = {}, stagePadding = 0}) {

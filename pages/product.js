@@ -1,16 +1,24 @@
+import Router from 'next/router';
 import ImgCarousel from '../components/ImgCarousel';
 import SideNav from '../components/SideNav';
 import '../styles/product.scss';
 import TopNav from '../components/TopNav';
 
-function Product({query}) {
+function Product({pid, iid}) {
+  const onClickBack = () => {
+    if(iid){
+      Router.push(`/influencer/${iid}`);
+      return;
+    }
+    Router.push('/');
+  }
   return (
     <div>
-        <TopNav/>
-        <div>
-
-        {JSON.stringify(query)}
-        </div>
+        <TopNav
+          left={<div onClick={onClickBack}>Back</div>}
+          />
+        <div>pid: {pid}</div>
+        <div>iid: {iid}</div>
       <h3 id="product-info">상품정보</h3>
       <ImgCarousel list={['/static/img/pic1.jpg', '/static/img/img2.jpeg', '/static/img/pic1_s.jpg']}/>
       <div>...</div>
@@ -108,8 +116,8 @@ function Product({query}) {
 }
 
 Product.getInitialProps = function ({query}) {
-  console.log('!!', query);
-  return {query};
+  const {pid, iid} = query;
+  return {iid, pid};
 };
 
 export default Product;
