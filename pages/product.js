@@ -1,8 +1,9 @@
 import Router from 'next/router';
 import ImgCarousel from '../components/ImgCarousel';
 import SideNav from '../components/SideNav';
-import '../styles/product.scss';
 import TopNav from '../components/TopNav';
+
+import '../styles/product.scss';
 
 function Product({pid, iid}) {
   const onClickBack = () => {

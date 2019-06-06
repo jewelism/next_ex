@@ -5,7 +5,6 @@ export default class MyDocument extends Document {
   static getInitialProps({renderPage}) {
     const {html, head} = renderPage();
     const styles = flush();
-
     return {html, head, styles};
   }
 

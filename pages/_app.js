@@ -2,6 +2,8 @@ import React from 'react';
 import App, {Container} from 'next/app';
 import {register, unregister} from 'next-offline/runtime';
 
+import 'normalize.css';
+
 class NextApp extends App {
   static async getInitialProps({Component, ctx}) {
     let pageProps = {};
@@ -27,6 +29,7 @@ class NextApp extends App {
     return (
       <Container>
         <title>Next</title>
+        {/* <style>{`html { font-size: 15px; }`}</style> */}
         <Component {...pageProps} />
       </Container>
     )

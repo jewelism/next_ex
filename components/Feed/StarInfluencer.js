@@ -1,7 +1,10 @@
-import FeedHeader from './FeedHeader';
+import Router from 'next/router';
 import Carousel from 'react-alice-carousel';
-import '../../styles/carousel.scss';
+
+import FeedHeader from './FeedHeader';
 import Like from '../Like/Like';
+
+import '../../styles/carousel.scss';
 
 function StarInfluencer({list = []}) {
   const handleOnDragStart = e => e.preventDefault();
@@ -30,7 +33,7 @@ function StarInfluencer({list = []}) {
               </div>
               <div>{item.name}</div>
               <div><Like liked={item.followed}/>{item.followCount}</div>
-              <div onClick={() => alert(`routing to ${item.id}`)}>View more +</div>
+              <div onClick={() => Router.push(`/influencer/${item.id}`)}>View more +</div>
             </div>
           </div>
         )}

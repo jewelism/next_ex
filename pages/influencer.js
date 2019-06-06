@@ -1,6 +1,12 @@
+import TopNav from '../components/TopNav';
+import TopNavBack from '../components/Nav/TopNavBack';
+
 const Influencer = ({iid}) => {
   return (
-    <div>influencer {iid}</div>
+    <div>
+      <TopNav/>
+      influencer {iid}
+    </div>
   );
 };
 

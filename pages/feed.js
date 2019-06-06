@@ -1,15 +1,16 @@
 import {useState, useEffect} from 'react';
-import '../styles/feed.scss';
 
 import WithCategory from '../layouts/WithCategory';
 import FeedSection from '../components/Feed/FeedSection';
 import StarInfluencer from '../components/Feed/StarInfluencer';
 import HamburgMenu from '../components/HamburgMenu';
-
-import {findFeedList} from '../api';
 import TopNav from '../components/TopNav';
 
-const Feed = () => {
+import {findFeedList} from '../api';
+
+import '../styles/feed.scss';
+
+function Feed() {
   const [nextPage, setNextPage] = useState(1);
   const [productList, setProductList] = useState([]);
   const addProductList = list => {
@@ -64,15 +65,8 @@ const Feed = () => {
   );
 };
 
-// Feed.getInitialProps = function (ctx) {
-//   return new Promise(resolve => {
-//     fetch('https://inseongj1.moqa.co.kr/1')
-//       .then(res => res.json())
-//       .then(data => resolve({data}))
-//       .catch(err=> {
-//         console.error(err)
-//       });
-//   });
-// };
+Feed.getInitialProps = function (ctx) {
+  return;
+};
 
 export default Feed;
