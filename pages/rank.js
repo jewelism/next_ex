@@ -1,7 +1,7 @@
 const Rank = () => {
   return (
     <div>
-      Rank
+      Rank rank
     </div>
   );
 };
