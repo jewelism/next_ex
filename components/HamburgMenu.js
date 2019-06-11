@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../styles/index.scss';
+import '../styles/menu.scss';
 import Icon from './Icon';
 import MainMenu from './MainMenu';
 import FBLogin from './Facebook/FBLogin';

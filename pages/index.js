@@ -9,6 +9,7 @@ import TopNav from '../components/TopNav';
 import {findFeedList} from '../api';
 
 import '../styles/feed.scss';
+import '../styles/menu.scss';
 
 function Index() {
   const [nextPage, setNextPage] = useState(1);

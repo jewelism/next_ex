@@ -20,19 +20,3 @@
 .feed-header {
   font-size: 30px;
 }
-
-.category-menu-item {
-  padding: 0 10px;
-  margin: 5px;
-  user-select: none;
-  cursor: pointer;
-  border: none;
-}
-
-.menu-item-wrapper:focus {
-  outline: none;
-}
-.menu-item-wrapper.active {
-  color: $sig-color;
-  border-bottom: 1px solid $sig-color;
-}

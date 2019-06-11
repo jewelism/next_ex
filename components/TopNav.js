@@ -1,4 +1,4 @@
-import '../styles/index.scss';
+import '../styles/menu.scss';
 import TopNavBack from './Nav/TopNavBack';
 
 const TopNav = ({left, center, right}) => {

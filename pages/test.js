@@ -1,5 +1,5 @@
 import MainMenu from '../components/MainMenu';
-import '../styles/index.scss';
+import '../styles/menu.scss';
 import StarInfluencer from '../components/Feed/StarInfluencer';
 
 const Test = ({auth}) => {
