@@ -6,10 +6,23 @@ $font-size: 30px;
 
 .top-nav-container {
   display: flex;
-  justify-content: space-between;
   position: sticky;
   z-index: 5;
   top: 0;
+}
+
+.top-nav-item {
+  flex: 1 0 auto;
+
+  .left {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .right {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .hamburg-menu {
