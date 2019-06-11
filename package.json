@@ -10,7 +10,7 @@
     "start": "node server.js",
     "n": "npm run build && next start",
     "w": "npm run build && npm start",
-    "k": "git pull && npm install && npm start"
+    "k": "git pull upstream master && npm install && npm start"
   },
   "author": "boseok",
   "dependencies": {
