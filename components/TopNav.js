@@ -10,7 +10,9 @@ const TopNav = ({left, center, right}) => {
         </div>
       </div>
       <div className="top-nav-item">
-        S
+        <div className="center">
+          S
+        </div>
       </div>
       <div className="top-nav-item">
         <div className="right">

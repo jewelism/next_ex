@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.194" height="14" viewBox="0 0 18.194 14">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10}
+        </style>
+    </defs>
+    <g id="btn_menu" transform="translate(-3488.829 -56.748)">
+        <path id="선_133" d="M0 0h17.194" class="cls-1" data-name="선 133" transform="translate(3489.329 57.248)"/>
+        <path id="선_134" d="M0 0h17.194" class="cls-1" data-name="선 134" transform="translate(3489.329 63.748)"/>
+        <path id="선_135" d="M0 0h17.194" class="cls-1" data-name="선 135" transform="translate(3489.329 70.248)"/>
+    </g>
+</svg>

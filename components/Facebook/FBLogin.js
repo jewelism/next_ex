@@ -24,7 +24,7 @@ const FBLogin = props => {
     language="ko-KR"
     callback={responseFacebook}
     render={renderProps => (
-      <div onClick={e => onClickLogin(e, renderProps.onClick)}>FB Login</div>
+      <div onClick={e => onClickLogin(e, renderProps.onClick)}>{props.children}</div>
     )}/>
 };
 
