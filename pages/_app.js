@@ -32,7 +32,7 @@ class NextApp extends App {
     return (
       <Container>
         <Provider store={reduxStore}>
-          <title>Next</title>
+          <title>Sprout</title>
           {/* <style>{`html { font-size: 15px; }`}</style> */}
           <Component {...pageProps} />
         </Provider>

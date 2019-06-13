@@ -6,20 +6,22 @@ import TopNav from '../components/TopNav';
 import '../styles/product.scss';
 
 function Product({pid, iid}) {
+
   const onClickBack = () => {
-    if(iid){
+    if (iid) {
       Router.push(`/influencer/${iid}`);
       return;
     }
     Router.push('/');
   }
   return (
+
     <div>
-        <TopNav
-          left={<div onClick={onClickBack}>Back</div>}
-          />
-        <div>pid: {pid}</div>
-        <div>iid: {iid}</div>
+      <TopNav
+        left={<div onClick={onClickBack}>Back</div>}
+      />
+      <div>pid: {pid}</div>
+      <div>iid: {iid}</div>
       <h3 id="product-info">상품정보</h3>
       <ImgCarousel list={['/static/img/pic1.jpg', '/static/img/img2.jpeg', '/static/img/pic1_s.jpg']}/>
       <div>...</div>

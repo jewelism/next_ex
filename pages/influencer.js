@@ -1,5 +1,6 @@
+import {connect} from 'react-redux';
+import {startClock} from '../store/actions/app';
 import TopNav from '../components/TopNav';
-import TopNavBack from '../components/Nav/TopNavBack';
 
 const Influencer = ({iid}) => {
   return (
@@ -15,4 +16,6 @@ Influencer.getInitialProps = function ({query}) {
   return {iid};
 };
 
-export default Influencer;
+
+const mapDispatchToProps = { startClock };
+export default connect(null, mapDispatchToProps)(Influencer);
