@@ -1,6 +1,8 @@
 import React from 'react';
 import App, {Container} from 'next/app';
 import {register, unregister} from 'next-offline/runtime';
+import withReduxStore from '../lib/with-redux-store';
+import { Provider } from 'react-redux';
 
 import 'normalize.css';
 
@@ -25,16 +27,18 @@ class NextApp extends App {
   }
 
   render() {
-    const {Component, pageProps} = this.props;
+    const {Component, pageProps, reduxStore} = this.props;
 
     return (
       <Container>
-        <title>Next</title>
-        {/* <style>{`html { font-size: 15px; }`}</style> */}
-        <Component {...pageProps} />
+        <Provider store={reduxStore}>
+          <title>Next</title>
+          {/* <style>{`html { font-size: 15px; }`}</style> */}
+          <Component {...pageProps} />
+        </Provider>
       </Container>
     )
   }
 }
 
-export default NextApp;
+export default withReduxStore(NextApp);
