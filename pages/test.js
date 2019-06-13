@@ -1,4 +1,4 @@
-import MainMenu from '../components/MainMenu';
+import MainMenu from '../components/Menu/MainMenu';
 import '../styles/menu.scss';
 import StarInfluencer from '../components/Feed/StarInfluencer';
 

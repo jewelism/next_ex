@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20.934" height="20.934" viewBox="0 0 20.934 20.934">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:none;stroke:#231815;stroke-miterlimit:10}.cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="btn_search" transform="translate(-3753.158 -53.5)">
+        <circle id="타원_56" cx="8.367" cy="8.367" r="8.367" class="cls-1" data-name="타원 56" transform="translate(3753.658 54)"/>
+        <path id="선_132" d="M0 0l5.933 5.933" class="cls-2" data-name="선 132" transform="translate(3767.804 68.147)"/>
+    </g>
+</svg>

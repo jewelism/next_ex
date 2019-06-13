@@ -1,7 +1,7 @@
 import Router from 'next/router';
 import ImgCarousel from '../components/ImgCarousel';
-import SideNav from '../components/SideNav';
-import TopNav from '../components/TopNav';
+import SideNav from '../components/Nav/SideNav';
+import TopNav from '../components/Nav/TopNav';
 
 import '../styles/product.scss';
 

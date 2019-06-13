@@ -3,8 +3,8 @@ import {useState, useEffect} from 'react';
 import WithCategory from '../layouts/WithCategory';
 import FeedSection from '../components/Feed/FeedSection';
 import StarInfluencer from '../components/Feed/StarInfluencer';
-import HamburgMenu from '../components/HamburgMenu';
-import TopNav from '../components/TopNav';
+import HamburgMenu from '../components/Menu/HamburgMenu';
+import TopNav from '../components/Nav/TopNav';
 
 import {findFeedList} from '../api';
 

@@ -6,9 +6,9 @@ const FBLogin = props => {
   const [loading, setLoading] = useState(false);
   const onClickLogin = (e, propsOnClick) => {
     if (!loading) {
-      sessionStorage.setItem('search', location.href);
-      setLoading(true);
       propsOnClick(e);
+      setLoading(true);
+      sessionStorage.setItem('search', location.href);
     }
   };
 

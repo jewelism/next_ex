@@ -3,3 +3,10 @@ $font-size: 30px;
 .font-test {
   font-size: $font-size;
 }
+
+.common-like-icon {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+  margin-right: 4px;
+}

@@ -1,5 +1,6 @@
-import '../styles/menu.scss';
-import TopNavBack from './Nav/TopNavBack';
+import '../../styles/menu.scss';
+import TopNavBack from './TopNavBack';
+import Icon from '../Icon';
 
 const TopNav = ({left, center, right}) => {
   return(
@@ -11,12 +12,12 @@ const TopNav = ({left, center, right}) => {
       </div>
       <div className="top-nav-item">
         <div className="center">
-          S
+          <Icon>logo-sample</Icon>
         </div>
       </div>
       <div className="top-nav-item">
         <div className="right">
-          {right || <div>Search</div>}
+          {right || <><Icon>btn-search</Icon><Icon>btn-cart</Icon></>}
         </div>
       </div>
     </div>

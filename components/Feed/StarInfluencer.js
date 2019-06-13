@@ -32,7 +32,7 @@ function StarInfluencer({list = []}) {
                 <img src="/static/img/img1.jpeg" className="carousel-circle-img"/>
               </div>
               <div>{item.name}</div>
-              <div><Like liked={item.followed}/>{item.followCount}</div>
+              <div><Like liked={item.followed} isFollow/>{item.followCount}</div>
               <div onClick={() => Router.push(`/influencer/${item.id}`)}>View more +</div>
             </div>
           </div>

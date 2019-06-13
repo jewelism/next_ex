@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22.718" height="21.999" viewBox="0 0 22.718 21.999">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#231815;stroke-miterlimit:10}
+        </style>
+    </defs>
+    <g id="btn_cart" transform="translate(-3786.825 -54.039)">
+        <g id="그룹_528" data-name="그룹 528">
+            <g id="그룹_527" data-name="그룹 527">
+                <path id="패스_88" d="M3786.825 54.539h2.082a2.358 2.358 0 0 1 2.323 1.955l.4 2.351" class="cls-1" data-name="패스 88"/>
+                <path id="패스_89" d="M3791.632 58.845h15.945a1.459 1.459 0 0 1 1.418 1.8l-1.748 7.2a2.662 2.662 0 0 1-2.587 2.034h-10.187a1.1 1.1 0 0 1-1.083-.911z" class="cls-1" data-name="패스 89"/>
+                <circle id="타원_57" cx="1.387" cy="1.387" r="1.387" class="cls-1" data-name="타원 57" transform="translate(3801.955 72.763)"/>
+                <circle id="타원_58" cx="1.387" cy="1.387" r="1.387" class="cls-1" data-name="타원 58" transform="translate(3795.101 72.763)"/>
+            </g>
+        </g>
+    </g>
+</svg>

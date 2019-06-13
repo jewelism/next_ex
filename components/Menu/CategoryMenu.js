@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import HorizontalScroll from 'react-horizontal-scrolling-menu';
+import HorizontalScroll from 'react-horizontal-scrolling-menu/build/index';
 
 const MenuItem = ({text, selected}) => <div className={`category-menu-item ${selected ? 'active' : ''}`}>{text}</div>;
 const Menu = (list, selected) => list.map(({name}) => <MenuItem text={name} key={name} selected={selected}/>);

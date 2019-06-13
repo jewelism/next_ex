@@ -1,5 +1,5 @@
-import CategoryMenu from '../components/CategoryMenu';
-import TopNav from '../components/TopNav';
+import CategoryMenu from '../components/Menu/CategoryMenu';
+import TopNav from '../components/Nav/TopNav';
 
 const WithCategory = ({children, nav}) => {
   return (

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import '../styles/menu.scss';
-import Icon from './Icon';
+import '../../styles/menu.scss';
+import Icon from '../Icon';
 import MainMenu from './MainMenu';
-import FBLogin from './Facebook/FBLogin';
+import FBLogin from '../Facebook/FBLogin';
 
 const HamburgMenu = (props) => {
   const [open, setOpen] = useState(false);

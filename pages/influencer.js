@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {startClock} from '../store/actions/app';
-import TopNav from '../components/TopNav';
+import TopNav from '../components/Nav/TopNav';
 
 const Influencer = ({iid}) => {
   return (
