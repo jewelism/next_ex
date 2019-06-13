@@ -3,30 +3,3 @@ $font-size: 30px;
 .font-test {
   font-size: $font-size;
 }
-
-.top-nav-container {
-  display: flex;
-  justify-content: space-between;
-  position: sticky;
-  z-index: 5;
-  top: 0;
-}
-
-.hamburg-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 80vw;
-  height: 100vh;
-  -moz-transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  background-color: blue;
-}
-
-.for-overlay {
-  position: relative;
-  z-index: 1;
-}

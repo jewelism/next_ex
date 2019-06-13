@@ -5,6 +5,7 @@ import {register, unregister} from 'next-offline/runtime';
 import 'normalize.css';
 
 class NextApp extends App {
+
   static async getInitialProps({Component, ctx}) {
     let pageProps = {};
 

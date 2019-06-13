@@ -1,7 +1,17 @@
-const TopNavBack = ({isHistoryBack}) => {
+import Router from 'next/router';
+
+function TopNavBack() {
+  function onClickBack() {
+    // if (window.history.length > 2) {
+    //   window.history.back();
+    //   return;
+    // }
+    Router.replace('/');
+  }
+
   return (
-    <div>Back</div>
+    <div onClick={onClickBack}>Back</div>
   );
-};
+}
 
 export default TopNavBack;
