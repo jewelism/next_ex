@@ -2,7 +2,7 @@ import Router from 'next/router';
 import Carousel from 'react-alice-carousel';
 
 import FeedHeader from './FeedHeader';
-import Like from '../Like/Like';
+import Like from '../Switch/Like';
 
 import '../../styles/carousel.scss';
 

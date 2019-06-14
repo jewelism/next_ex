@@ -1,5 +1,5 @@
 import Router from 'next/router';
-import Like from '../Like/Like';
+import Like from '../Switch/Like';
 
 function FeedItem({id, unit = '$', price, text, liked, likeCount = 0}) {
   const onClickItem = () => Router.push(`/product/${id}`);
