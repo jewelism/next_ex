@@ -1,7 +1,9 @@
+import WithCategory from "../layouts/WithCategory";
+
 const Rank = () => {
   return (
-    <div>
-      <ul className="rank-menu">
+    <WithCategory>
+      {/* <ul className="rank-menu">
         <li>Today</li>
         <li>Outer</li>
         <li>Top</li>
@@ -9,7 +11,7 @@ const Rank = () => {
         <li>Pants</li>
         <li>Dress</li>
         <li>Shoes</li>
-      </ul>
+      </ul> */}
       <div className="newly-influencer">
         <div className="face"></div>
         <div className="name">real_brown</div>
@@ -30,7 +32,7 @@ const Rank = () => {
           </div>
         </div>
       </div>
-    </div>
+    </WithCategory>
   );
 };
 
