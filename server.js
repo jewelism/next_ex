@@ -7,6 +7,9 @@ const {parse} = require('url');
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
 
+const {
+  BOARD_TYPE, NOTICE_ID, EVENT_ID, INFLUENCER_ID, PRODUCT_ID
+} = require('./constants/route');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({dev});
@@ -22,15 +25,31 @@ function createServer() {
   server.use(helmet());
   server.use(cookieParser());
 
-  server.get('/influencer/:iid', (req, res) => {
-    const {iid} = req.params;
-    return app.render(req, res, '/influencer', {iid});
+  server.get(`/board/:${BOARD_TYPE}`, (req, res) => {
+    return app.render(req, res, '/board', {[BOARD_TYPE]: req.params[BOARD_TYPE]});
   });
 
-  server.get('/product/:pid', (req, res) => {
-    const {pid} = req.params;
-    const {iid} = req.query;
-    return app.render(req, res, '/product', {pid, iid});
+  server.get(`/notice/:${NOTICE_ID}`, (req, res) => {
+    return app.render(req, res, '/notice', {[NOTICE_ID]: req.params[NOTICE_ID]});
+  });
+
+  server.get(`/event/:${EVENT_ID}`, (req, res) => {
+    return app.render(req, res, '/event', {[EVENT_ID]: req.params[EVENT_ID]});
+  });
+  
+  server.get(`/influencer/:${INFLUENCER_ID}`, (req, res) => {
+    const recode = {
+      [INFLUENCER_ID]: req.params[INFLUENCER_ID]
+    };
+    return app.render(req, res, '/influencer', recode);
+  });
+  
+  server.get(`/product/:${PRODUCT_ID}`, (req, res) => {
+    const recode = {
+      [INFLUENCER_ID]: req.query[INFLUENCER_ID],
+      [PRODUCT_ID]: req.params[PRODUCT_ID],
+    };
+    return app.render(req, res, '/product', recode);
   });
 
   server.get('*', (req, res) => {

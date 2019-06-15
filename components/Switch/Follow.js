@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 // import '../../styles/index.scss';
 
-function Like({followed = false, onClick, ...props}) {
+function Follow({followed = false, onClick, ...props}) {
   const [follow, setFollow] = useState(followed);
   const onClick = () => {
     setFollow(!follow);
@@ -10,8 +10,8 @@ function Like({followed = false, onClick, ...props}) {
   };
   const text = follow ? 'Following' : 'Follow';
   return (
-    <div onClick={onClick}>{text}</div>
+    <div onClick={onClick} {...props}>{text}</div>
   );
 }
 
-export default Like;
+export default Follow;

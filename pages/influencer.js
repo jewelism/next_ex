@@ -2,20 +2,18 @@ import {connect} from 'react-redux';
 import {startClock} from '../store/actions/app';
 import TopNav from '../components/Nav/TopNav';
 
-const Influencer = ({iid}) => {
+import {INFLUENCER_ID} from '../constants/route';
+
+const Influencer = ({influencerId}) => {
   return (
     <div>
       <TopNav/>
-      influencer {iid}
+      influencer {influencerId}
     </div>
   );
 };
 
-Influencer.getInitialProps = function ({query}) {
-  const {iid} = query;
-  return {iid};
-};
-
+Influencer.getInitialProps = ({query}) => ({influencerId: query[INFLUENCER_ID]});
 
 const mapDispatchToProps = { startClock };
 export default connect(null, mapDispatchToProps)(Influencer);

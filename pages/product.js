@@ -3,13 +3,15 @@ import ImgCarousel from '../components/ImgCarousel';
 import SideNav from '../components/Nav/SideNav';
 import TopNav from '../components/Nav/TopNav';
 
+import {PRODUCT_ID, INFLUENCER_ID} from '../constants/route';
+
 import '../styles/product.scss';
 
-function Product({pid, iid}) {
+function Product({productId, influencerId}) {
 
   const onClickBack = () => {
-    if (iid) {
-      Router.push(`/influencer/${iid}`);
+    if (influencerId) {
+      Router.push(`/influencer/${influencerId}`);
       return;
     }
     Router.push('/');
@@ -20,8 +22,8 @@ function Product({pid, iid}) {
       <TopNav
         left={<div onClick={onClickBack}>Back</div>}
       />
-      <div>pid: {pid}</div>
-      <div>iid: {iid}</div>
+      <div>productId: {productId}</div>
+      <div>influencerId: {influencerId}</div>
       <h3 id="product-info">상품정보</h3>
       <ImgCarousel list={['/static/img/pic1.jpg', '/static/img/img2.jpeg', '/static/img/pic1_s.jpg']}/>
       <div>...</div>
@@ -118,9 +120,6 @@ function Product({pid, iid}) {
   );
 }
 
-Product.getInitialProps = function ({query}) {
-  const {pid, iid} = query;
-  return {iid, pid};
-};
+Product.getInitialProps = ({query}) => ({productId: query[PRODUCT_ID], influencerId: query[INFLUENCER_ID]});
 
 export default Product;
