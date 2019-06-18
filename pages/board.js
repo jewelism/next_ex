@@ -1,10 +1,19 @@
+import {useState, useEffect} from 'react';
 import BoardList from "../components/Board/BoardList";
+import { findBoardListByType } from "../api/board";
 
-const Board = ({type}) => {
+const Board = ({boardType}) => {
+  const [boardList, setBoardList] = useState([]);
+
+  useEffect(() => {
+    findBoardListByType(boardType)
+      .then(list => setBoardList(list));
+  }, []);
+
   return (
     <div>
-      <BoardList type={type} list={[]}/>
-      {type}
+      <BoardList type={boardType} list={boardList}/>
+      {boardType}
     </div>
   );
 };
