@@ -13,6 +13,7 @@ class Search extends PureComponent {
 
     this.state = {
       searchInput: '',
+      searchResultList: [],
       popularList: [],
       recentList: [],
     };
@@ -26,9 +27,8 @@ class Search extends PureComponent {
   }
 
   handleSearchInput = () => this.$search
-    .pipe(
-      debounceTime(400)
-    ).subscribe(searchInput => {
+    .pipe(debounceTime(400))
+    .subscribe(searchInput => {
       console.log('search:', searchInput);
       //call api
     });
@@ -44,20 +44,27 @@ class Search extends PureComponent {
   }
 
   render() {
+    const {onChangeSearchInput} = this;
+    const {searchInput, searchResultList, popularList, recentList} = this.state;
+    const noSearchResult = searchInput && !searchResultList.length;
     return (
       <div>
         <TopNav />
         <div>
           <Icon>btn-search</Icon>
-          <input value={this.state.searchInput} onChange={this.onChangeSearchInput} placeholder="Search..." />
+          <input value={searchInput} onChange={onChangeSearchInput} placeholder="Search..." />
+          {noSearchResult ? 
+          <div className="search-no-result">no result</div>
+          :
+          searchResultList.map(result => <div key={result}>{result}</div>)}
         </div>
         <div>Popular</div>
         <div>
-          {this.state.popularList.map(po => <span key={po}>{po}</span>)}
+          {popularList.map(po => <span key={po}>{po}</span>)}
         </div>
         <div>Recent Search</div>
         <div>
-          {this.state.recentList.map(re => <span key={re}>{re}</span>)}
+          {recentList.map(re => <span key={re}>{re}</span>)}
         </div>
       </div>
     );
