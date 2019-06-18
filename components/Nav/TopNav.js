@@ -14,7 +14,7 @@ const TopNav = ({left, center, right}) => {
       </div>
       <div className="top-nav-item">
         <div className="center">
-          <Icon>logo-sample</Icon>
+        {center || <Icon>logo-sample</Icon>}
         </div>
       </div>
       <div className="top-nav-item">

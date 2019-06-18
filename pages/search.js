@@ -6,6 +6,7 @@ import TopNav from '../components/Nav/TopNav';
 import Icon from '../components/Icon';
 
 import '../styles/search.scss';
+import TopNavBack from '../components/Nav/TopNavBack';
 
 class Search extends PureComponent {
   constructor(props) {
@@ -49,7 +50,7 @@ class Search extends PureComponent {
     const noSearchResult = searchInput && !searchResultList.length;
     return (
       <div>
-        <TopNav />
+        <TopNav left={<TopNavBack path="/"/>} center="Search" right=" " />
         <div>
           <Icon>btn-search</Icon>
           <input value={searchInput} onChange={onChangeSearchInput} placeholder="Search..." />
@@ -69,7 +70,6 @@ class Search extends PureComponent {
       </div>
     );
   }
-
 }
 
 export default Search;

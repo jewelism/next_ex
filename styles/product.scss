@@ -1,4 +1,4 @@
-@import 'color.scss';
+@import "color.scss";
 
 h3:before {
   content: "";
@@ -16,4 +16,32 @@ a:link {
 a:visited {
   color: initial;
   text-decoration: none;
+}
+
+$like-btn-size: 40px;
+$core-btn-margin: 18px;
+
+.product-core-btn-wrap {
+  position: sticky;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin: 0 $core-btn-margin;
+}
+
+.product-buy-btn {
+  width: calc(100% - #{$like-btn-size} - #{$core-btn-margin});
+  background-color: $sig-color;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  text-align: center;
+  color: #ffffff;
+  height: 100%;
+}
+
+.product-like-btn {
+  width: $like-btn-size;
+  height: 100%;
+  margin-left: $core-btn-margin;
 }

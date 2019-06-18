@@ -1,6 +1,6 @@
 import React from 'react';
-import App, {Container} from 'next/app';
-import {register, unregister} from 'next-offline/runtime';
+import App, { Container } from 'next/app';
+import { register, unregister } from 'next-offline/runtime';
 import withReduxStore from '../lib/with-redux-store';
 import { Provider } from 'react-redux';
 
@@ -8,32 +8,31 @@ import 'normalize.css';
 
 class NextApp extends App {
 
-  static async getInitialProps({Component, ctx}) {
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    return {pageProps};
+    return { pageProps };
   }
 
   componentDidMount() {
-    register()
+    register();
   }
 
   componentWillUnmount() {
-    unregister()
+    unregister();
   }
 
   render() {
-    const {Component, pageProps, reduxStore} = this.props;
+    const { Component, pageProps, reduxStore } = this.props;
 
     return (
       <Container>
         <Provider store={reduxStore}>
           <title>Sprout</title>
-          {/* <style>{`html { font-size: 15px; }`}</style> */}
           <Component {...pageProps} />
         </Provider>
       </Container>
