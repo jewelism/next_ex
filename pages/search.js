@@ -1,0 +1,68 @@
+import { PureComponent } from 'react';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
+
+import TopNav from '../components/Nav/TopNav';
+import Icon from '../components/Icon';
+
+import '../styles/search.scss';
+
+class Search extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      searchInput: '',
+      popularList: [],
+      recentList: [],
+    };
+    this.$search = new Subject();
+  }
+
+  onChangeSearchInput = e => {
+    const searchInput = e.target.value;
+    this.setState({ searchInput });
+    this.$search.next(searchInput);
+  }
+
+  handleSearchInput = () => this.$search
+    .pipe(
+      debounceTime(400)
+    ).subscribe(searchInput => {
+      console.log('search:', searchInput);
+      //call api
+    });
+
+  getRecentSearchList = () => {
+    const storageRecentList = localStorage.getItem('recentSearchList') || [];
+    this.setState({ recentList: storageRecentList });
+  };
+
+  componentDidMount() {
+    this.getRecentSearchList();
+    this.handleSearchInput();
+  }
+
+  render() {
+    return (
+      <div>
+        <TopNav />
+        <div>
+          <Icon>btn-search</Icon>
+          <input value={this.state.searchInput} onChange={this.onChangeSearchInput} placeholder="Search..." />
+        </div>
+        <div>Popular</div>
+        <div>
+          {this.state.popularList.map(po => <span key={po}>{po}</span>)}
+        </div>
+        <div>Recent Search</div>
+        <div>
+          {this.state.recentList.map(re => <span key={re}>{re}</span>)}
+        </div>
+      </div>
+    );
+  }
+
+}
+
+export default Search;

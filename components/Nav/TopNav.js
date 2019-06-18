@@ -1,8 +1,10 @@
+import Router from 'next/router';
 import '../../styles/menu.scss';
 import TopNavBack from './TopNavBack';
 import Icon from '../Icon';
 
 const TopNav = ({left, center, right}) => {
+  const onClickSearch = () => Router.push('/search');
   return(
     <div className="top-nav-container">
       <div className="top-nav-item">
@@ -17,7 +19,7 @@ const TopNav = ({left, center, right}) => {
       </div>
       <div className="top-nav-item">
         <div className="right">
-          {right || <><Icon>btn-search</Icon><Icon>btn-cart</Icon></>}
+          {right || <><Icon onClick={onClickSearch}>btn-search</Icon>{/* <Icon>btn-cart</Icon> */}</>}
         </div>
       </div>
     </div>
