@@ -1,5 +1,8 @@
 import actionTypes from '../types/app';
 
+export const startLoading = () => ({ type: actionTypes.START_LOADING, loading: false });
+export const stopLoading = () => ({ type: actionTypes.STOP_LOADING, loading: false });
+
 export const serverRenderClock = () => {
   return { type: actionTypes.TICK, light: false, ts: Date.now() }
 }

@@ -49,30 +49,6 @@ function Product({ productId, influencerId }) {
       <div>...</div>
       <div>...</div>
       <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
       <h3 id="product-size">
         사이즈
       </h3>
@@ -86,38 +62,6 @@ function Product({ productId, influencerId }) {
       <div>...</div>
       <div>...</div>
       <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-
       <h3 id="product-qna">
         Q & A
       </h3>

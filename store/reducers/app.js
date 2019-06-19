@@ -1,6 +1,7 @@
 import actionTypes from '../types/app';
 
 const initialState = {
+  loading: false,
   lastUpdate: 0,
   light: false,
   count: 0
@@ -8,6 +9,10 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.START_LOADING:
+      return { ...state, loading: true };
+    case actionTypes.STOP_LOADING:
+      return { ...state, loading: false };
     case actionTypes.TICK:
       return Object.assign({}, state, {
         lastUpdate: action.ts,
