@@ -71,10 +71,11 @@ app
     const server = createServer();
     if (dev) {
       https.createServer(httpsOptions, server).listen(8080);
+      console.log('dev > Ready on http://localhost:8080');
     } else {
       server.listen(3001, err => {
         if (err) throw err;
-        console.log('> Ready on http://localhost:3001');
+        console.log('production > Ready on http://localhost:3001');
       });
     }
   })
